@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #8d8d8d;
+    color: #222;
+    padding: 24px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.info-panel {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.team-box {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fafafa;
+}
+
+.team-box h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.player-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.player-tag {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.team-a1 {
+    background: #bdbdbd;
+}
+
+.team-a2 {
+    background: #bdbdbd;
+}
+
+.team-b1 {
+    background: #000000;
+}
+
+.team-b2 {
+    background: #000000;
+}
+
+.turn-box,
+.status-box {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.legend {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.board-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    position: relative;
+    width: min(90vw, 820px);
+    aspect-ratio: 1 / 1;
+    background-image: url("images/board.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.stone-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stone {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+}
+
+.last-move {
+    outline: 4px solid #ffe44d;
+    border-radius: 50%;
+}
+
+.win-stone {
+    filter: drop-shadow(0 0 8px #ffeb3b);
+}
+
+@media (max-width: 700px) {
+    .teams {
+        grid-template-columns: 1fr;
+    }
+
+    .turn-box,
+    .status-box {
+        font-size: 16px;
+    }
+}
